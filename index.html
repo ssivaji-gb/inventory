@@ -1,0 +1,103 @@
+
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Inventory Management System</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    input, button {
+      padding: 8px;
+      margin: 5px 0;
+      width: 100%;
+    }
+    button {
+      cursor: pointer;
+      background: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 4px;
+    }
+    button:hover {
+      background: #1e40af;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: center;
+    }
+    th {
+      background: #f1f5f9;
+    }
+    .danger {
+      background: #dc2626;
+    }
+    .danger:hover {
+      background: #991b1b;
+    }
+    .success {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Inventory Management System</h1>
+
+  <div class="container">
+    <h3>Add / Update Product</h3>
+    <input type="number" id="id" placeholder="Product ID" />
+    <input type="text" id="name" placeholder="Product Name" />
+    <input type="number" id="quantity" placeholder="Quantity" />
+    <input type="number" id="price" placeholder="Price" />
+    <button onclick="addOrUpdateProduct()">Add / Update Product</button>
+
+    <h3>Search Product</h3>
+    <input type="text" id="search" placeholder="Search by name" oninput="searchProduct()" />
+    <div class="serach"></div>
+
+    <h3>Inventory</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Quantity</th>
+          <th>Price</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="inventoryBody"></tbody>
+    </table>
+
+    <button class="danger" onclick="calculateTotal()">Calculate Total Inventory Value</button>
+    <div class="success" id="total"></div>
+  </div>
+
+  <script src="inventory.js"> 
+   
+  </script>
+
+</body>
+</html>
